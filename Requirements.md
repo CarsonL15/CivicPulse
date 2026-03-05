@@ -6,7 +6,7 @@ CivicPulse is a platform that connects young people with local civic events happ
 
 ## Target Audience
 
-- Young people (18-30) who are civically curious but don't know where to start
+- Young people who are civically curious but don't know where to start
 - Event organizers (advocacy groups, neighborhood associations, local political organizations, community groups) who want to reach more attendees
 
 ## Use Cases
@@ -33,7 +33,7 @@ CivicPulse is a platform that connects young people with local civic events happ
 - Azure SQL
 
 **AI & Search**
-- OpenAI API (plain-language summary generation + text embeddings)
+- LLM API (undecided on model) plain-language summary generation + text embeddings
 - Vector search using embeddings for semantic event discovery
 
 **Cloud & Deployment**
