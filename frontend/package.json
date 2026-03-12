@@ -1,0 +1,30 @@
+{
+  "name": "civicpulse-frontend",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.11.3",
+    "nuxt": "^3.21.1",
+    "pinia": "^3.0.4",
+    "vue": "latest",
+    "vuetify": "^4.0.1",
+    "vuetify-nuxt-module": "^1.0.0-alpha.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.4",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^28.1.0",
+    "sass-embedded": "^1.97.3",
+    "unplugin-auto-import": "^21.0.0",
+    "vitest": "^4.0.18"
+  }
+}
