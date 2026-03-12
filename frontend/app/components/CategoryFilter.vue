@@ -35,6 +35,11 @@ function toggle(value: string) {
 .category-chip {
   cursor: pointer;
   transition: all 0.2s ease;
+  color: #ffffff !important;
+}
+
+.category-chip :deep(.v-icon) {
+  color: #ffffff !important;
 }
 
 .category-chip:hover {

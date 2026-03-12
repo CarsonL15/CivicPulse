@@ -20,7 +20,7 @@
           />
         </div>
 
-        <div class="mt-4 animate-fade-in-up stagger-4">
+        <div class="mt-6 animate-fade-in-up stagger-4">
           <CategoryFilter v-model="search.category.value" />
         </div>
       </v-container>
