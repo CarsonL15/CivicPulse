@@ -1,17 +1,48 @@
 <template>
-  <v-container class="py-6" style="max-width: 700px">
-    <h1 class="text-h4 font-weight-bold mb-6">Create Event</h1>
+  <v-container class="py-8" style="max-width: 700px">
+    <div class="mb-8 animate-fade-in-down">
+      <h1 class="page-title">Create Event</h1>
+      <p class="text-body-1 text-grey-darken-1 mt-1">
+        Share a civic event with your community. AI will generate a plain-language summary automatically.
+      </p>
+      <hr class="gradient-divider mt-3" style="width: 60px" />
+    </div>
 
-    <v-alert v-if="error" type="error" class="mb-4" closable @click:close="error = ''">
+    <v-alert v-if="error" type="error" class="mb-6" closable rounded="lg" @click:close="error = ''">
       {{ error }}
     </v-alert>
 
-    <v-alert v-if="success" type="success" class="mb-4">
-      Event created successfully!
-      <template v-if="createdEvent?.aiSummary">
-        <br /><strong>AI Summary:</strong> {{ createdEvent.aiSummary }}
-      </template>
-    </v-alert>
+    <!-- Success Card -->
+    <v-card v-if="success" rounded="xl" elevation="3" class="mb-6 animate-scale-in" color="success" variant="tonal">
+      <v-card-text class="pa-6">
+        <div class="d-flex align-center ga-3 mb-3">
+          <v-icon icon="mdi-check-circle" size="48" color="success" />
+          <div>
+            <p class="text-h6 font-weight-bold">Event Created!</p>
+            <p class="text-body-2 text-grey-darken-1">{{ createdEvent?.title }}</p>
+          </div>
+        </div>
+
+        <v-card v-if="createdEvent?.aiSummary" variant="outlined" rounded="lg" class="mt-3">
+          <v-card-text>
+            <p class="text-caption text-grey font-weight-bold mb-1">
+              <v-icon icon="mdi-robot" size="x-small" /> AI Summary
+            </p>
+            <p class="text-body-2">{{ createdEvent.aiSummary }}</p>
+            <template v-if="createdEvent?.whyItMatters">
+              <p class="text-caption text-grey font-weight-bold mt-3 mb-1">
+                <v-icon icon="mdi-lightbulb-on" size="x-small" /> Why It Matters
+              </p>
+              <p class="text-body-2">{{ createdEvent.whyItMatters }}</p>
+            </template>
+          </v-card-text>
+        </v-card>
+
+        <v-btn :to="`/events/${createdEvent?.id}`" color="primary" variant="elevated" rounded="lg" class="mt-4" prepend-icon="mdi-eye">
+          View Event
+        </v-btn>
+      </v-card-text>
+    </v-card>
 
     <EventForm
       v-model:title="title"
@@ -63,7 +94,6 @@ async function handleSubmit() {
       category: category.value
     })
     success.value = true
-    // Reset form
     title.value = ''
     description.value = ''
     eventDate.value = ''

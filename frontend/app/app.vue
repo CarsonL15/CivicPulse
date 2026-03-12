@@ -1,9 +1,10 @@
 <template>
-  <v-app>
+  <v-app style="font-family: 'Inter', sans-serif">
     <AppNavBar />
-    <v-main>
+    <v-main class="civic-pattern-bg">
       <NuxtPage />
     </v-main>
+    <AppFooter />
   </v-app>
 </template>
 

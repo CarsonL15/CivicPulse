@@ -35,9 +35,20 @@ export default defineNuxtConfig({
       apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'http://localhost:5000'
     }
   },
+  css: [
+    '~/assets/css/animations.css',
+    '~/assets/css/typography.css',
+  ],
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       title: 'CivicPulse',
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'
+        }
+      ],
       meta: [
         { name: 'description', content: 'Discover civic events that matter to you' }
       ]

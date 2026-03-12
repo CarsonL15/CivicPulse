@@ -57,9 +57,9 @@ function mountEventList(props = {}) {
 }
 
 describe('EventList', () => {
-  it('shows loading spinner when loading', () => {
+  it('shows skeleton loaders when loading', () => {
     const wrapper = mountEventList({ loading: true })
-    expect(wrapper.find('.v-progress-circular').exists()).toBe(true)
+    expect(wrapper.find('.v-skeleton-loader').exists()).toBe(true)
   })
 
   it('shows empty message when no events', () => {
@@ -84,8 +84,8 @@ describe('EventList', () => {
     expect(cols.length).toBe(2)
   })
 
-  it('does not show loading spinner when not loading', () => {
+  it('does not show skeleton loaders when not loading', () => {
     const wrapper = mountEventList({ events: mockEvents })
-    expect(wrapper.find('.v-progress-circular').exists()).toBe(false)
+    expect(wrapper.find('.v-skeleton-loader').exists()).toBe(false)
   })
 })

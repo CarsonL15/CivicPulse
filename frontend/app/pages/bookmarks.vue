@@ -1,24 +1,42 @@
 <template>
-  <v-container class="py-6">
-    <h1 class="text-h4 font-weight-bold mb-6">My Bookmarks</h1>
-
-    <div v-if="loading" class="d-flex justify-center py-8">
-      <v-progress-circular indeterminate color="primary" />
+  <v-container class="py-8">
+    <div class="mb-8 animate-fade-in-down">
+      <div class="d-flex align-center ga-3 mb-1">
+        <h1 class="page-title">My Bookmarks</h1>
+        <v-chip v-if="!loading && bookmarks.length" color="primary" variant="tonal" size="small">
+          {{ bookmarks.length }} saved
+        </v-chip>
+      </div>
+      <p class="text-body-1 text-grey-darken-1">Events you've saved for later</p>
+      <hr class="gradient-divider mt-3" style="width: 60px" />
     </div>
 
-    <div v-else-if="bookmarks.length === 0" class="text-center py-8">
-      <v-icon size="64" color="grey-lighten-1" icon="mdi-bookmark-outline" />
-      <p class="text-h6 text-grey mt-2">No saved events yet</p>
-      <v-btn to="/" color="primary" variant="outlined" class="mt-4">Discover Events</v-btn>
+    <div v-if="loading" class="py-4">
+      <v-row>
+        <v-col v-for="n in 3" :key="n" cols="12" sm="6" lg="4">
+          <v-skeleton-loader type="card" elevation="2" rounded="lg" />
+        </v-col>
+      </v-row>
+    </div>
+
+    <div v-else-if="bookmarks.length === 0" class="text-center py-12">
+      <v-card variant="tonal" color="grey-lighten-3" rounded="xl" class="d-inline-block pa-10 animate-scale-in">
+        <v-icon size="80" color="grey-lighten-1" icon="mdi-bookmark-outline" />
+        <p class="text-h6 text-grey-darken-1 mt-4">No saved events yet</p>
+        <p class="text-body-2 text-grey mt-1 mb-4">Explore events and bookmark the ones you like</p>
+        <v-btn to="/" color="primary" variant="elevated" rounded="lg" prepend-icon="mdi-compass">
+          Discover Events
+        </v-btn>
+      </v-card>
     </div>
 
     <v-row v-else>
       <v-col
-        v-for="event in bookmarks"
+        v-for="(event, index) in bookmarks"
         :key="event.id"
         cols="12" sm="6" lg="4"
       >
-        <EventCard :event="{ ...event, isBookmarked: true }" @toggle-bookmark="handleRemove" />
+        <EventCard :event="{ ...event, isBookmarked: true }" :index="index" @toggle-bookmark="handleRemove" />
       </v-col>
     </v-row>
   </v-container>
