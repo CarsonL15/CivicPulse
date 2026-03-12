@@ -4,8 +4,8 @@
     <v-chip
       v-for="(cat, i) in categories"
       :key="cat.value"
-      :color="cat.color"
-      :variant="modelValue === cat.value ? 'flat' : 'tonal'"
+      :color="modelValue === cat.value ? cat.color : 'white'"
+      :variant="modelValue === cat.value ? 'flat' : 'outlined'"
       :elevation="0"
       :prepend-icon="modelValue === cat.value ? 'mdi-check' : cat.icon"
       :class="['animate-fade-in-up', `stagger-${i + 1}`, 'category-chip']"

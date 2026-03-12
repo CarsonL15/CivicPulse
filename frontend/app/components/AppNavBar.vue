@@ -81,5 +81,6 @@ const { user, isAuthenticated, isOrganizer, isAdmin, logout } = useAuth()
   text-transform: none;
   letter-spacing: 0;
   font-weight: 500;
+  color: #ffffff !important;
 }
 </style>
