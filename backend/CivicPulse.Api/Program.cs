@@ -72,10 +72,14 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Seed roles, admin user, and ensure search index exists
+// Create database, seed roles/admin, and ensure search index
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
+
+    var db = services.GetRequiredService<AppDbContext>();
+    await db.Database.EnsureCreatedAsync();
+
     await SeedData.InitializeAsync(services);
 
     var searchService = services.GetRequiredService<ISearchService>();
