@@ -1,6 +1,7 @@
 using CivicPulse.Api.Data;
 using CivicPulse.Api.Dtos;
 using CivicPulse.Api.Models;
+using CivicPulse.Api.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -15,11 +16,13 @@ public class AdminController : ControllerBase
 {
     private readonly UserManager<AppUser> _userManager;
     private readonly AppDbContext _db;
+    private readonly ISearchService _searchService;
 
-    public AdminController(UserManager<AppUser> userManager, AppDbContext db)
+    public AdminController(UserManager<AppUser> userManager, AppDbContext db, ISearchService searchService)
     {
         _userManager = userManager;
         _db = db;
+        _searchService = searchService;
     }
 
     [HttpGet("users")]
@@ -116,6 +119,7 @@ public class AdminController : ControllerBase
 
         _db.Events.Remove(ev);
         await _db.SaveChangesAsync();
+        await _searchService.DeleteEventAsync(id.ToString());
         return NoContent();
     }
 }
