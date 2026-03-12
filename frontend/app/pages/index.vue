@@ -10,7 +10,7 @@
           City council meetings, town halls, and community events — explained in plain language with AI.
         </p>
 
-        <div class="animate-fade-in-up stagger-3" style="max-width: 600px">
+        <div class="animate-fade-in-up stagger-3" style="max-width: 600px; margin-bottom: 32px">
           <SearchBar
             v-model="search.query.value"
             v-model:image-file="search.imageFile.value"
@@ -20,7 +20,7 @@
           />
         </div>
 
-        <div class="mt-6 animate-fade-in-up stagger-4">
+        <div class="animate-fade-in-up stagger-4">
           <CategoryFilter v-model="search.category.value" />
         </div>
       </v-container>
