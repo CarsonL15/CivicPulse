@@ -132,7 +132,7 @@ async function handleRegister() {
 
 <style scoped>
 .auth-panel {
-  background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #1E88A8 100%);
+  background: linear-gradient(135deg, #0f2b3e 0%, #1a4a6e 100%);
   position: relative;
   overflow: hidden;
 }
@@ -161,7 +161,7 @@ async function handleRegister() {
 
 .auth-card {
   border-top: 3px solid transparent;
-  border-image: linear-gradient(90deg, #1565C0, #26A69A) 1;
+  border-image: linear-gradient(90deg, #0f2b3e, #1a4a6e) 1;
 }
 
 .auth-btn {

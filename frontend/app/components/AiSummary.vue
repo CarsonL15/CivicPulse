@@ -23,7 +23,7 @@ defineProps<{
 
 <style scoped>
 .ai-summary {
-  border-left: 3px solid #1565C0;
+  border-left: 3px solid #1a4a6e;
   padding-left: 16px;
 }
 

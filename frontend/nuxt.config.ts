@@ -15,8 +15,8 @@ export default defineNuxtConfig({
           civicPulseTheme: {
             dark: false,
             colors: {
-              primary: '#1565C0',
-              secondary: '#26A69A',
+              primary: '#0f2b3e',
+              secondary: '#1a4a6e',
               accent: '#FF7043',
               background: '#FAFAFA',
               surface: '#FFFFFF',

@@ -7,7 +7,7 @@
     </div>
 
     <!-- Stats Cards -->
-    <v-row class="mb-6">
+    <v-row class="mb-10">
       <v-col cols="12" sm="4">
         <v-card rounded="lg" elevation="2" class="animate-fade-in-up stagger-1">
           <v-card-text class="d-flex align-center ga-3 pa-5">
@@ -189,6 +189,6 @@ onMounted(async () => {
 
 <style scoped>
 .admin-table :deep(tr:hover) {
-  background: rgba(21, 101, 192, 0.04) !important;
+  background: rgba(15, 43, 62, 0.04) !important;
 }
 </style>

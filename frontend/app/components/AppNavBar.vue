@@ -68,7 +68,7 @@ const { user, isAuthenticated, isOrganizer, isAdmin, logout } = useAuth()
 
 <style scoped>
 .navbar-gradient {
-  background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #1976D2 100%) !important;
+  background: linear-gradient(135deg, #0f2b3e 0%, #1a4a6e 100%) !important;
 }
 
 .navbar-brand {

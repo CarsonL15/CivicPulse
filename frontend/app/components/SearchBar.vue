@@ -1,50 +1,37 @@
 <template>
   <div>
-    <div class="search-wrapper d-flex align-center" style="gap: 8px">
-      <div style="flex: 1; min-width: 0">
-        <v-text-field
-          v-model="modelValue"
-          placeholder="Search for civic events..."
-          prepend-inner-icon="mdi-magnify"
-          variant="outlined"
-          density="comfortable"
-          rounded="pill"
-          clearable
-          hide-details
-          bg-color="white"
-          class="search-field"
-          @keyup.enter="$emit('search')"
-          @click:clear="$emit('clear')"
-        >
-          <template #append-inner>
-            <v-tooltip text="Search by image — upload an event poster" location="bottom">
-              <template #activator="{ props }">
-                <v-btn
-                  v-bind="props"
-                  icon="mdi-image-search"
-                  variant="text"
-                  size="small"
-                  color="grey-darken-1"
-                  @click="openFilePicker"
-                />
-              </template>
-            </v-tooltip>
-          </template>
-        </v-text-field>
-      </div>
-      <v-btn
-        color="white"
-        icon="mdi-magnify"
-        size="large"
-        rounded="circle"
-        variant="flat"
-        class="search-btn flex-shrink-0"
-        @click="$emit('search')"
-      >
-        <v-icon color="primary">mdi-magnify</v-icon>
-        <v-tooltip activator="parent" location="bottom">Search</v-tooltip>
-      </v-btn>
-    </div>
+    <v-text-field
+      v-model="modelValue"
+      placeholder="Search for civic events..."
+      prepend-inner-icon="mdi-magnify"
+      variant="solo"
+      density="comfortable"
+      rounded="pill"
+      clearable
+      hide-details
+      flat
+      class="search-field"
+      @keyup.enter="$emit('search')"
+      @click:clear="$emit('clear')"
+    >
+      <template #append-inner>
+        <v-btn
+          icon="mdi-image-search"
+          variant="text"
+          size="small"
+          color="grey-darken-1"
+          @click="openFilePicker"
+        />
+        <v-btn
+          icon="mdi-magnify"
+          variant="flat"
+          size="small"
+          color="primary"
+          class="ml-1"
+          @click="$emit('search')"
+        />
+      </template>
+    </v-text-field>
 
     <v-scale-transition>
       <v-chip
@@ -103,18 +90,6 @@ function clearImage() {
 <style scoped>
 .search-field :deep(.v-field) {
   font-size: 1.05rem;
-}
-
-.search-field :deep(.v-field--focused) {
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
-}
-
-.search-btn {
-  transition: transform 0.15s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.search-btn:hover {
-  transform: scale(1.05);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 </style>

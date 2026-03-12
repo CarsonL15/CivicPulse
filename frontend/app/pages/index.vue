@@ -165,7 +165,7 @@ const categoryColors: Record<string, string> = {
   Education: 'blue', Housing: 'orange', PublicSafety: 'red', Environment: 'green'
 }
 const categoryColorHexMap: Record<string, string> = {
-  Education: '#1976D2', Housing: '#FF9800', PublicSafety: '#F44336', Environment: '#4CAF50'
+  Education: '#1a4a6e', Housing: '#FF9800', PublicSafety: '#F44336', Environment: '#4CAF50'
 }
 function categoryColor(cat: string) { return categoryColors[cat] || 'grey' }
 function categoryColorHex(cat: string) { return categoryColorHexMap[cat] || '#9E9E9E' }
@@ -186,6 +186,6 @@ onMounted(async () => {
 
 <style scoped>
 .hero-section {
-  background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #1976D2 100%);
+  background: linear-gradient(135deg, #0f2b3e 0%, #1a4a6e 100%);
 }
 </style>
