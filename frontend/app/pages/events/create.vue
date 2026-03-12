@@ -13,7 +13,7 @@
     </v-alert>
 
     <!-- Success Card -->
-    <v-card v-if="success" rounded="xl" elevation="3" class="mb-6 animate-scale-in" color="success" variant="tonal">
+    <v-card v-if="success" rounded="xl" elevation="0" class="mb-6 animate-scale-in" color="success" variant="tonal">
       <v-card-text class="pa-6">
         <div class="d-flex align-center ga-3 mb-3">
           <v-icon icon="mdi-check-circle" size="48" color="success" />

@@ -14,7 +14,7 @@
     <div v-if="loading" class="py-4">
       <v-row>
         <v-col v-for="n in 3" :key="n" cols="12" sm="6" lg="4">
-          <v-skeleton-loader type="card" elevation="2" rounded="lg" />
+          <v-skeleton-loader type="card" rounded="lg" />
         </v-col>
       </v-row>
     </div>

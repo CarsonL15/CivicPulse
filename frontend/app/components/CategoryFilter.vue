@@ -6,7 +6,7 @@
       :key="cat.value"
       :color="cat.color"
       :variant="modelValue === cat.value ? 'flat' : 'tonal'"
-      :elevation="modelValue === cat.value ? 2 : 0"
+      :elevation="0"
       :prepend-icon="modelValue === cat.value ? 'mdi-check' : cat.icon"
       :class="['animate-fade-in-up', `stagger-${i + 1}`, 'category-chip']"
       @click="toggle(cat.value)"

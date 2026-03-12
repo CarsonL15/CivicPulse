@@ -90,6 +90,5 @@ function clearImage() {
 <style scoped>
 .search-field :deep(.v-field) {
   font-size: 1.05rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
 </style>

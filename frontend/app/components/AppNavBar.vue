@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar class="navbar-gradient" density="comfortable" scroll-behavior="elevate">
+  <v-app-bar class="navbar-gradient" density="comfortable" flat>
     <v-app-bar-title>
       <NuxtLink to="/" class="text-white text-decoration-none d-flex align-center ga-2">
         <v-icon icon="mdi-pulse" size="28" />
@@ -68,7 +68,7 @@ const { user, isAuthenticated, isOrganizer, isAdmin, logout } = useAuth()
 
 <style scoped>
 .navbar-gradient {
-  background: linear-gradient(135deg, #0f2b3e 0%, #1a4a6e 100%) !important;
+  background: #0f2b3e !important;
 }
 
 .navbar-brand {

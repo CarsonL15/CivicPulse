@@ -1,5 +1,5 @@
 <template>
-  <v-card rounded="xl" elevation="3" class="animate-fade-in-up">
+  <v-card rounded="xl" variant="outlined" class="animate-fade-in-up">
     <v-card-text class="pa-6">
       <v-form ref="form" @submit.prevent="$emit('submit')">
         <p class="text-overline text-primary mb-3">Event Details</p>
@@ -77,7 +77,7 @@
           :loading="loading"
           block
           rounded="lg"
-          elevation="2"
+          elevation="0"
           prepend-icon="mdi-send"
           class="submit-btn"
         >

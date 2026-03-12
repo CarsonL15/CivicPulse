@@ -21,7 +21,7 @@
             <h1 class="text-h5 font-weight-bold text-gradient-primary">CivicPulse</h1>
           </div>
 
-          <v-card rounded="xl" elevation="6" class="auth-card">
+          <v-card rounded="xl" elevation="0" class="auth-card">
             <v-card-text class="pa-8">
               <h2 class="text-h5 font-weight-bold mb-1">Create Account</h2>
               <p class="text-body-2 text-grey-darken-1 mb-6">Get started with CivicPulse</p>
@@ -89,7 +89,7 @@
                   </v-col>
                 </v-row>
 
-                <v-btn type="submit" color="primary" block size="large" rounded="lg" elevation="2" :loading="loading" class="auth-btn">
+                <v-btn type="submit" color="primary" block size="large" rounded="lg" elevation="0" :loading="loading" class="auth-btn">
                   Create Account
                 </v-btn>
               </v-form>
@@ -132,31 +132,7 @@ async function handleRegister() {
 
 <style scoped>
 .auth-panel {
-  background: linear-gradient(135deg, #0f2b3e 0%, #1a4a6e 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.auth-panel::before {
-  content: '';
-  position: absolute;
-  top: -30%;
-  right: -20%;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: rgba(38, 166, 154, 0.12);
-}
-
-.auth-panel::after {
-  content: '';
-  position: absolute;
-  bottom: -20%;
-  left: -10%;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: rgba(255, 112, 67, 0.08);
+  background: #1a4a6e;
 }
 
 .auth-card {

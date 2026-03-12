@@ -40,7 +40,7 @@
         <div v-if="search.loading.value" class="py-4">
           <v-row>
             <v-col v-for="n in 3" :key="n" cols="12" sm="6" lg="4">
-              <v-skeleton-loader type="card" elevation="2" rounded="lg" />
+              <v-skeleton-loader type="card" rounded="lg" />
             </v-col>
           </v-row>
         </div>
@@ -58,9 +58,8 @@
             cols="12" sm="6" lg="4"
           >
             <v-card
-              elevation="2"
+              variant="outlined"
               rounded="lg"
-              class="hover-lift"
               :class="['animate-fade-in-up', `stagger-${(index % 9) + 1}`]"
               :style="{ borderTop: `3px solid ${categoryColorHex(result.category)}` }"
               @click="navigateTo(`/events/${result.id}`)"
@@ -100,7 +99,7 @@
         <div v-if="eventsLoading" class="py-4">
           <v-row>
             <v-col v-for="n in 6" :key="n" cols="12" sm="6" lg="4">
-              <v-skeleton-loader type="card" elevation="2" rounded="lg" />
+              <v-skeleton-loader type="card" rounded="lg" />
             </v-col>
           </v-row>
         </div>
@@ -186,6 +185,6 @@ onMounted(async () => {
 
 <style scoped>
 .hero-section {
-  background: linear-gradient(135deg, #0f2b3e 0%, #1a4a6e 100%);
+  background: #1a4a6e;
 }
 </style>

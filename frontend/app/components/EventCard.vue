@@ -1,7 +1,7 @@
 <template>
   <v-card
-    class="event-card hover-lift"
-    elevation="2"
+    class="event-card"
+    variant="outlined"
     rounded="lg"
     :style="{ borderTop: `3px solid ${categoryColor}` }"
     :class="[animationClass]"

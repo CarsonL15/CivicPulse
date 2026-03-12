@@ -9,7 +9,7 @@
     <!-- Stats Cards -->
     <v-row class="mb-10">
       <v-col cols="12" sm="4">
-        <v-card rounded="lg" elevation="2" class="animate-fade-in-up stagger-1">
+        <v-card rounded="lg" variant="outlined" class="animate-fade-in-up stagger-1">
           <v-card-text class="d-flex align-center ga-3 pa-5">
             <v-avatar color="primary" variant="tonal" size="48">
               <v-icon icon="mdi-account-group" />
@@ -22,7 +22,7 @@
         </v-card>
       </v-col>
       <v-col cols="12" sm="4">
-        <v-card rounded="lg" elevation="2" class="animate-fade-in-up stagger-2">
+        <v-card rounded="lg" variant="outlined" class="animate-fade-in-up stagger-2">
           <v-card-text class="d-flex align-center ga-3 pa-5">
             <v-avatar color="secondary" variant="tonal" size="48">
               <v-icon icon="mdi-calendar-multiple" />
@@ -35,7 +35,7 @@
         </v-card>
       </v-col>
       <v-col cols="12" sm="4">
-        <v-card rounded="lg" elevation="2" class="animate-fade-in-up stagger-3">
+        <v-card rounded="lg" variant="outlined" class="animate-fade-in-up stagger-3">
           <v-card-text class="d-flex align-center ga-3 pa-5">
             <v-avatar color="warning" variant="tonal" size="48">
               <v-icon icon="mdi-clock-alert" />
@@ -50,7 +50,7 @@
     </v-row>
 
     <!-- Tabs -->
-    <v-card rounded="lg" elevation="2" class="animate-fade-in-up stagger-4">
+    <v-card rounded="lg" variant="outlined" class="animate-fade-in-up stagger-4">
       <v-tabs v-model="tab" color="primary" grow>
         <v-tab value="users" prepend-icon="mdi-account-group">Users</v-tab>
         <v-tab value="events" prepend-icon="mdi-calendar-multiple">Events</v-tab>
