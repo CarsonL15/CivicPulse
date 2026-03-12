@@ -63,8 +63,8 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins(
-                builder.Configuration.GetValue<string>("FrontendUrl") ?? "http://localhost:3000")
+        var frontendUrl = builder.Configuration.GetValue<string>("FrontendUrl") ?? "http://localhost:3000";
+        policy.WithOrigins(frontendUrl, "http://localhost:3000")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -72,10 +72,11 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Create database, seed roles/admin, and ensure search index
+// Create database, seed roles/admin, ensure search index, and index seed events
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
+    var logger = services.GetRequiredService<ILogger<Program>>();
 
     var db = services.GetRequiredService<AppDbContext>();
     await db.Database.EnsureCreatedAsync();
@@ -84,6 +85,34 @@ using (var scope = app.Services.CreateScope())
 
     var searchService = services.GetRequiredService<ISearchService>();
     await searchService.EnsureIndexAsync();
+
+    // Index all events that aren't yet in the search index
+    try
+    {
+        var embeddingService = services.GetRequiredService<IEmbeddingService>();
+        var events = await db.Events.ToListAsync();
+        foreach (var ev in events)
+        {
+            try
+            {
+                var textToEmbed = $"{ev.Title} {ev.Description} {ev.Category} {ev.AiSummary}";
+                var vector = await embeddingService.VectorizeTextAsync(textToEmbed);
+                await searchService.IndexEventAsync(
+                    ev.Id, ev.Title, ev.Description, ev.AiSummary,
+                    ev.Category.ToString(), ev.EventDate, ev.Location,
+                    ev.OrganizerId, vector);
+                logger.LogInformation("Indexed event {EventId}: {Title}", ev.Id, ev.Title);
+            }
+            catch (Exception ex)
+            {
+                logger.LogWarning(ex, "Failed to index event {EventId}", ev.Id);
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        logger.LogWarning(ex, "Failed to index seed events — search may not work until events are re-indexed");
+    }
 }
 
 if (app.Environment.IsDevelopment())
