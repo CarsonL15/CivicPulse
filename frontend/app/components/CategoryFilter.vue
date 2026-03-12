@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex align-center flex-wrap ga-2">
-    <span class="text-caption text-grey-darken-1 font-weight-medium mr-1">Filter:</span>
+    <span class="text-caption font-weight-medium mr-1 filter-label">Filter:</span>
     <v-chip
       v-for="(cat, i) in categories"
       :key="cat.value"
@@ -39,5 +39,9 @@ function toggle(value: string) {
 
 .category-chip:hover {
   transform: translateY(-1px);
+}
+
+.filter-label {
+  color: rgba(255, 255, 255, 0.8);
 }
 </style>

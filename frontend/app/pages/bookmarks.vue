@@ -19,15 +19,13 @@
       </v-row>
     </div>
 
-    <div v-else-if="bookmarks.length === 0" class="text-center py-12">
-      <v-card variant="tonal" color="grey-lighten-3" rounded="xl" class="d-inline-block pa-10 animate-scale-in">
-        <v-icon size="80" color="grey-lighten-1" icon="mdi-bookmark-outline" />
-        <p class="text-h6 text-grey-darken-1 mt-4">No saved events yet</p>
-        <p class="text-body-2 text-grey mt-1 mb-4">Explore events and bookmark the ones you like</p>
-        <v-btn to="/" color="primary" variant="elevated" rounded="lg" prepend-icon="mdi-compass">
-          Discover Events
-        </v-btn>
-      </v-card>
+    <div v-else-if="bookmarks.length === 0" class="text-center py-16 animate-fade-in-up">
+      <v-icon size="64" color="grey-lighten-1" icon="mdi-bookmark-outline" class="mb-4" />
+      <p class="text-h6 font-weight-medium mb-1">No saved events yet</p>
+      <p class="text-body-2 text-grey mb-6">Explore events and bookmark the ones you like</p>
+      <v-btn to="/" color="primary" variant="flat" rounded="lg" prepend-icon="mdi-compass">
+        Discover Events
+      </v-btn>
     </div>
 
     <v-row v-else>

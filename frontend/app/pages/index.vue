@@ -2,15 +2,15 @@
   <div>
     <!-- Hero Section -->
     <div class="hero-section">
-      <v-container class="py-16 position-relative" style="z-index: 1">
-        <h1 class="hero-headline text-white animate-fade-in-down mb-3">
+      <v-container class="pt-14 pb-16 position-relative" style="z-index: 1">
+        <h1 class="hero-headline text-white animate-fade-in-down mb-2">
           Discover civic events<br />that matter to you
         </h1>
-        <p class="hero-subtitle text-white animate-fade-in-up stagger-2 mb-8">
-          Find city council meetings, town halls, and community events — explained in plain language with AI.
+        <p class="hero-subtitle text-white animate-fade-in-up stagger-2 mb-8" style="max-width: 560px">
+          City council meetings, town halls, and community events — explained in plain language with AI.
         </p>
 
-        <div class="animate-fade-in-up stagger-3" style="max-width: 700px">
+        <div class="animate-fade-in-up stagger-3" style="max-width: 600px">
           <SearchBar
             v-model="search.query.value"
             v-model:image-file="search.imageFile.value"
@@ -20,33 +20,11 @@
           />
         </div>
 
-        <div class="mt-5 animate-fade-in-up stagger-4">
+        <div class="mt-4 animate-fade-in-up stagger-4">
           <CategoryFilter v-model="search.category.value" />
         </div>
       </v-container>
-      <div class="hero-wave" />
     </div>
-
-    <!-- Stats Bar -->
-    <v-container class="mt-n4 mb-6">
-      <v-row justify="center">
-        <v-col cols="auto">
-          <v-chip variant="tonal" color="primary" class="mx-1 animate-fade-in-up stagger-1" prepend-icon="mdi-calendar-check">
-            {{ events.length }} Active Events
-          </v-chip>
-        </v-col>
-        <v-col cols="auto">
-          <v-chip variant="tonal" color="secondary" class="mx-1 animate-fade-in-up stagger-2" prepend-icon="mdi-shape">
-            4 Categories
-          </v-chip>
-        </v-col>
-        <v-col cols="auto">
-          <v-chip variant="tonal" color="accent" class="mx-1 animate-fade-in-up stagger-3" prepend-icon="mdi-robot">
-            AI-Powered Summaries
-          </v-chip>
-        </v-col>
-      </v-row>
-    </v-container>
 
     <!-- Results / Events -->
     <v-container>
@@ -68,11 +46,9 @@
         </div>
 
         <div v-else-if="search.results.value.length === 0" class="text-center py-12">
-          <v-card variant="tonal" color="grey-lighten-3" rounded="xl" class="d-inline-block pa-8 animate-scale-in">
-            <v-icon size="64" color="grey-lighten-1" icon="mdi-magnify" />
-            <p class="text-h6 text-grey-darken-1 mt-3">No results found</p>
-            <p class="text-body-2 text-grey mt-1">Try a different search or upload an event poster</p>
-          </v-card>
+          <v-icon size="48" color="grey-lighten-1" icon="mdi-magnify" class="mb-3" />
+          <p class="text-h6 text-grey-darken-1">No results found</p>
+          <p class="text-body-2 text-grey mt-1">Try a different search or upload an event poster</p>
         </div>
 
         <v-row v-else>
@@ -210,42 +186,6 @@ onMounted(async () => {
 
 <style scoped>
 .hero-section {
-  background: linear-gradient(135deg, #0D47A1 0%, #1565C0 40%, #1976D2 70%, #1E88A8 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: rgba(38, 166, 154, 0.1);
-  pointer-events: none;
-}
-
-.hero-section::after {
-  content: '';
-  position: absolute;
-  bottom: -50%;
-  left: -10%;
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background: rgba(255, 112, 67, 0.06);
-  pointer-events: none;
-}
-
-.hero-wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 40px;
-  background: #FAFAFA;
-  clip-path: ellipse(55% 100% at 50% 100%);
+  background: linear-gradient(135deg, #0D47A1 0%, #1565C0 50%, #1976D2 100%);
 }
 </style>
