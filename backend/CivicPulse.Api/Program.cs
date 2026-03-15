@@ -52,6 +52,8 @@ builder.Services.AddScoped<ISearchService, SearchService>();
 builder.Services.AddHttpClient<IEmbeddingService, EmbeddingService>();
 builder.Services.AddScoped<ISummaryService, SummaryService>();
 builder.Services.AddScoped<IBookmarkService, BookmarkService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IAdminService, AdminService>();
 
 // Controllers
 builder.Services.AddControllers();
