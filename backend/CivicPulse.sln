@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CivicPulse.Api", "CivicPulse.Api\CivicPulse.Api.csproj", "{7FBFFC72-80E0-41FF-871D-32D75348CF79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CivicPulse.Api.Tests", "CivicPulse.Api.Tests\CivicPulse.Api.Tests.csproj", "{CEB74A88-A418-405E-9165-3CA92B761CE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FBFFC72-80E0-41FF-871D-32D75348CF79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FBFFC72-80E0-41FF-871D-32D75348CF79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FBFFC72-80E0-41FF-871D-32D75348CF79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FBFFC72-80E0-41FF-871D-32D75348CF79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB74A88-A418-405E-9165-3CA92B761CE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB74A88-A418-405E-9165-3CA92B761CE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB74A88-A418-405E-9165-3CA92B761CE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB74A88-A418-405E-9165-3CA92B761CE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
